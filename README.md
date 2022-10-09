@@ -1,5 +1,21 @@
 # Vitest
 
+## Project setup
+
+- Copy project to local machine
+
+```
+git clone git@github.com:Fecony/vite-component-vitest/.git
+```
+
+- Move to project directory and Install dependencies
+
+```
+cd vite-component-vitest
+
+yarn install
+```
+
 - Run tests once
   `yarn run test`
 
