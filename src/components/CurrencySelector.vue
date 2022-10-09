@@ -34,23 +34,30 @@ const handleClick = (currency: string): void => {
 
 <template>
   <div class="container">
-    <div class="container--selected">
+    <div class="container--selected" data-test-selected>
       <div
         class="currency"
         v-for="currency in selectedCurrencies"
+        :data-test-selected-currency="currency"
         :key="currency"
       >
         {{ currency }}
-        <span class="currency-close" @click="handleClick(currency)">x</span>
+        <span
+          class="currency-close"
+          data-test-remove-selected-currency
+          @click="handleClick(currency)"
+          >x</span
+        >
       </div>
     </div>
 
-    <div class="container--currencies">
+    <div class="container--currencies" data-test-currencies>
       <label
         class="currency"
         :key="currency"
         v-for="currency in currencies"
         :class="{ selected: isSelected(currency) }"
+        :data-test-currency="currency"
       >
         <input
           type="checkbox"
